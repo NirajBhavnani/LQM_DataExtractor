@@ -3,17 +3,14 @@ using Models;
 
 namespace BusinessLogic
 {
-    public class CsvProcessor(ICsvFileReader fileReader, ICsvFileWriter fileWriter)
+    public class CsvProcessor(ICsvFileReader fileReader, ICsvFileWriter fileWriter) : IBankProcessor
     {
         private readonly ICsvFileReader _fileReader = fileReader;
         private readonly ICsvFileWriter _fileWriter = fileWriter;
 
         public void ProcessCsv(string inputFilePath, string outputFilePath)
         {
-            // Read input CSV
             List<InputData> inputRecords = _fileReader.ReadCsv(inputFilePath);
-
-            // Prepare list for output records
             List<OutputData> outputRecords = [];
 
             foreach (InputData record in inputRecords)
@@ -32,7 +29,6 @@ namespace BusinessLogic
                 outputRecords.Add(outputRecord);
             }
 
-            // Write output records to output CSV
             _fileWriter.WriteCsv(outputFilePath, outputRecords);
         }
 

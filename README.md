@@ -12,7 +12,11 @@ LQM_DataExtractor/
 │   └── Program.cs                  # Entry point for the application
 │
 ├── DataExtractor.BusinessLogic/    # Core business logic
-│   └── CsvProcessor.cs             # Processes CSV records and extracts relevant fields
+│   └── CsvProcessor.cs             # Processes CSV records and extracts relevant fields (Default implementation of CSV)
+│   └── BankProcessorFactory.cs     # Factory to choose correct bank processor
+│   └── IBankProcessor.cs           # Interface for each bank processor
+│   └── BarclaysProcessor.cs        # Implementation of Barclays CSV processing
+│   └── HSBCProcessor.cs            # Implementation of HSBC CSV processing
 │
 ├── DataExtractor.DataAccess/       # File reading and writing logic
 │   └── ICsvFileReader.cs           # Interface for reading input CSV files
