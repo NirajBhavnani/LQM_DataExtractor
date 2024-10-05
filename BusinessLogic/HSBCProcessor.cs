@@ -15,7 +15,7 @@ namespace BusinessLogic
 
             foreach (InputData record in inputRecords)
             {
-                // Barclays-specific parsing logic (e.g., extract PriceMultiplier or other complex fields)
+                // HSBC-specific parsing logic (e.g., extract PriceMultiplier or other complex fields)
                 decimal contractSize = ParseAlgoParams();
 
                 OutputData outputRecord = new()
@@ -32,7 +32,7 @@ namespace BusinessLogic
 
         private static decimal ParseAlgoParams()
         {
-            // Barclays-specific logic for extracting PriceMultiplier from AlgoParams
+            // HSBC-specific logic for extracting PriceMultiplier from AlgoParams
             return 35m; // Example for demonstration
         }
     }

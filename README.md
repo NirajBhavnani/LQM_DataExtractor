@@ -24,9 +24,12 @@ LQM_DataExtractor/
 │   └── ICsvFileWriter.cs           # Interface for writing output CSV files
 │   └── CsvFileWriter.cs            # Writes output CSV files
 │
-└── DataExtractor.Models/           # Data models representing input and output CSVs
-    └── InputData.cs                # Model for input CSV records
-    └── OutputData.cs               # Model for output CSV records
+├── DataExtractor.Models/           # Data models representing input and output CSVs
+|   └── InputData.cs                # Model for input CSV records
+|   └── OutputData.cs               # Model for output CSV records
+│
+└── DataExtractor.Tests/            # Test project
+    └── DataAccessTest.cs           # Test cases for DataAccess layer
 
 ```
 
